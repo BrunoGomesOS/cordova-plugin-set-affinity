@@ -11,9 +11,9 @@
   </engines>
   <platform name="android">
       <edit-config file="AndroidManifest.xml" 
-                   target="/manifest/application/activity"
+                   target="/manifest/application/activity[@android:name='com.outsystemscloud.bgomes.EventsCustomized.MainActivity']"
 		   mode="merge">
-		<activity android:name="com.outsystemscloud.bgomes.EventsCustomized.MainActivity" android:taskAffinity=""/>
+		<activity  android:taskAffinity=""/>
       </edit-config>
   </platform>
 </plugin>
