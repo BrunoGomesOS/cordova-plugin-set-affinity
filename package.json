@@ -10,16 +10,19 @@
     "type": "git",
     "url": "git+https://github.com/macdonst/cordova-plugin-set-affinity.git"
   },
-  "keywords": [
-    "cordova"
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=6.0.0"
+    }
   ],
-  "author": "Bruno Gomes",
+  "keywords": [
+    "cordova",
+    "setAffinity"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/BrunoGomesOS/cordova-plugin-set-affinity/issues"
   },
-  "homepage": "https://github.com/BrunoGomesOS/cordova-plugin-set-affinity#readme",
-  "devDependencies": {
-    "pluginpub": "0.0.8"
-  }
+  "homepage": "https://github.com/BrunoGomesOS/cordova-plugin-set-affinity#readme"
 }
