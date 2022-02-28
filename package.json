@@ -2,10 +2,6 @@
   "name": "cordova-plugin-set-affinity",
   "version": "0.0.1",
   "description": "To enable you to set the setAffinity property of a cordova-android application",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/macdonst/cordova-plugin-set-affinity.git"
