@@ -11,11 +11,9 @@
   </engines>
   <platform name="android">
       <edit-config file="AndroidManifest.xml" 
-                   target="/manifest/application"
+                   target="/manifest/application/activity"
 		   mode="merge">
-	     <application>
 		<activity android:taskAffinity=""/>
-	      </application>
       </edit-config>
   </platform>
 </plugin>
