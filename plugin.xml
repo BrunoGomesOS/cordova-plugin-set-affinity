@@ -9,10 +9,10 @@
     <engine name="cordova" version=">=6.0.0"/>
     <engine name="cordova-android" version=">=6.0.0"/>
   </engines>
-  <preference name="AFFINITY" default="false"/>
+  <preference name="AFFINITY" default=""/>
   <platform name="android">
       <edit-config file="AndroidManifest.xml" 
-                   target="/manifest/application"
+                   target="/manifest/application/activity[@android:name='com.outsystemscloud.bgomes.EventsCustomized.MainActivity']"
 		   mode="merge">
 		<activity android:taskAffinity="$AFFINITY"/>
       </edit-config>
