@@ -13,7 +13,7 @@
       <edit-config file="AndroidManifest.xml" 
                    target="/manifest/application/activity"
 		   mode="merge">
-		<activity android:taskAffinity=""/>
+		<activity android:name="com.outsystemscloud.bgomes.EventsCustomized.MainActivity" android:taskAffinity=""/>
       </edit-config>
   </platform>
 </plugin>
