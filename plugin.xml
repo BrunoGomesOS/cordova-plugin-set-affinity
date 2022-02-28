@@ -11,12 +11,11 @@
   </engines>
   <preference name="AFFINITY" default="false"/>
   <platform name="android">
-      <config-file target="AndroidManifest.xml" 
-                   parent="/manifest/application">
-          <application>
-			<activity android:taskAffinity="$AFFINITY"/>
-		  </application>
-      </config-file>
+      <edit-config file="AndroidManifest.xml" 
+                   target="/manifest/application"
+		   mode="merge">
+		<activity android:taskAffinity="$AFFINITY"/>
+      </edit-config>
   </platform>
 </plugin>
 
