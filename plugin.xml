@@ -4,18 +4,18 @@
   <description>
 		To enable you to set the allowBackup property of a cordova-android application.
 	</description>
-  
+  <license>MIT</license>
   <engines>
     <engine name="cordova" version=">=7.0.0"/>
     <engine name="cordova-android" version=">=7.0.0"/>
   </engines>
-  <preference name="STRING" default="false"/>
+  <preference name="AFFINITY" default="false"/>
   <platform name="android">
       <edit-config file="AndroidManifest.xml" 
                    target="/manifest/application" 
                    mode="merge">
           <application>
-			<activity android:taskAffinity="$STRING"/>
+			<activity android:taskAffinity="$AFFINITY"/>
 		  </application>
       </edit-config>
   </platform>
