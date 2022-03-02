@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-set-affinity" version="0.0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="cordova-plugin-set-affinity" version="0.0.1">
   <name>Set Affinity</name>
   <description>
 		To enable you to set the taskAffinity property of a cordova-android application.
 	</description>
   <license>MIT</license>
   <engines>
-    <engine name="cordova" version=">=7.0.0"/>
-    <engine name="cordova-android" version=">=7.0.0"/>
+    <engine name="cordova" version=">=6.4.0"/>
+    <engine name="cordova-android" version=">=6.0.0"/>
   </engines>
 
   <platform name="android">
