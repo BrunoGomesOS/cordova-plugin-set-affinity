@@ -71,10 +71,10 @@ var updateTaskAffinity = (function () {
 })();
 
 module.exports = function (ctx) {
-    var Q = ctx.requireCordovaModule("q");
-    fs = ctx.requireCordovaModule("fs");
-    path = ctx.requireCordovaModule("path");
-    elementtree = ctx.requireCordovaModule("elementtree");
+    var Q = ctx.require("q");
+    fs = ctx.require("fs");
+    path = ctx.require("path");
+    elementtree = ctx.require("elementtree");
 
     deferral = Q.defer();
 
