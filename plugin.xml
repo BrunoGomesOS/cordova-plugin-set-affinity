@@ -13,8 +13,8 @@
 	<dependency id="cordova-custom-config" url="https://github.com/dpa99c/cordova-custom-config" commit="master"/>
 -->
   <platform name="android">
-      <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity[@android:name='MainActivity']">
-      <activity android:taskAffinity=""/>
+      <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+      <application android:taskAffinity=""/>
     </edit-config>
   </platform>
 </plugin>
