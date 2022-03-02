@@ -11,8 +11,12 @@
   </engines>
  <dependency id="cordova-custom-config" url="https://github.com/dpa99c/cordova-custom-config" commit="master"/>
   <platform name="android">
-	<custom-preference name="android-manifest/application/activity[@android:name='MainActivity']/@android:setAffinity" value=""/>	  
-      
+	<!--
+		<custom-preference name="manifest/application/activity[@android:name='MainActivity']/@android:setAffinity" value=""/>
+   	-->
+      <custom-config-file target="AndroidManifest.xml" parent="/manifest/application" mode="add" >
+      		<activity android:taskAffinity=""/>
+    	</custom-config-file>
   </platform>
 </plugin>
 
