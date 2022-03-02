@@ -12,9 +12,10 @@
  <!--
 	<dependency id="cordova-custom-config" url="https://github.com/dpa99c/cordova-custom-config" commit="master"/>
 -->
+<preference name="AFFINITY" default="" />
   <platform name="android">
       <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity[@android:name='MainActivity']">
-      <activity android:taskAffinity="MainActivity"/>
+      <activity android:taskAffinity="$AFFINITY"/>
     </edit-config>
   </platform>
 </plugin>
