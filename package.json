@@ -16,6 +16,16 @@
     "cordova",
     "setAffinity"
   ],
+  "dependencies": {
+        "q": "^1.4.1",
+        "lodash": "^4.17.11",
+        "elementtree": "^0.1.6",
+        "plist": "^3.0.1",
+        "xcode": "^1.0.0",
+        "colors": "1.4.0",
+        "shelljs": "^0.7.0",
+        "tostr": "^0.1.0"
+    }
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/BrunoGomesOS/cordova-plugin-set-affinity/issues"
