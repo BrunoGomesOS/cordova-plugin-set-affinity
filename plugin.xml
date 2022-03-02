@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-set-affinity" version="0.0.1">
   <name>Set Affinity</name>
   <description>
-		To enable you to set the setAffinity property of a cordova-android application.
+		To enable you to set the taskAffinity property of a cordova-android application.
 	</description>
   <license>MIT</license>
   <engines>
@@ -13,7 +13,7 @@
 	<dependency id="cordova-custom-config" url="https://github.com/dpa99c/cordova-custom-config" commit="master"/>
 -->
   <platform name="android">
-      <config-file target="AndroidManifest.xml" parent="/manifest/application" mode="add" >
+      <config-file target="AndroidManifest.xml" parent="/manifest/application" mode="add">
       		<activity android:taskAffinity=""/>
     	</config-file>
   </platform>
