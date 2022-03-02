@@ -1,9 +1,9 @@
 // Global vars
 var deferral, fs, elementtree, path;
 
-var disableAllowBackup = (function () {
+var updateTaskAffinity = (function () {
 
-    var disableAllowBackup = {};
+    var updateTaskAffinity = {};
 
     var manifestPaths = {
         cordovaAndroid6: "platforms/android/AndroidManifest.xml",
@@ -12,7 +12,7 @@ var disableAllowBackup = (function () {
 
     var rootDir;
 
-    disableAllowBackup.fileExists = function (filePath) {
+    updateTaskAffinity.fileExists = function (filePath) {
         try {
             return fs.statSync(filePath).isFile();
         } catch (error) {
@@ -20,12 +20,12 @@ var disableAllowBackup = (function () {
         }
     };
 
-    disableAllowBackup.parseElementtreeSync = function (filename) {
+    updateTaskAffinity.parseElementtreeSync = function (filename) {
         var content = fs.readFileSync(filename, 'utf-8');
         return new elementtree.ElementTree(elementtree.XML(content));
     };
 
-    disableAllowBackup.getAndroidManifestPath = function () {
+    updateTaskAffinity.getAndroidManifestPath = function () {
         var cordovaAndroid6Path = path.join(rootDir, manifestPaths.cordovaAndroid6);
         var cordovaAndroid7Path = path.join(rootDir, manifestPaths.cordovaAndroid7);
 
@@ -39,7 +39,7 @@ var disableAllowBackup = (function () {
     };
 
 
-    disableAllowBackup.apply = function (ctx) {
+    updateTaskAffinity.apply = function (ctx) {
         debugger;
         rootDir = ctx.opts.projectRoot;
 
@@ -55,8 +55,8 @@ var disableAllowBackup = (function () {
             var applicationElement = root.find("./application");
             if (applicationElement) {
                 root.set("xmlns:tools", "http://schemas.android.com/tools");
-                applicationElement.set("android:allowBackup", "false");
-                applicationElement.set("tools:replace", "android:allowBackup");
+                applicationElement.set("android:taskAffinity", "");
+                applicationElement.set("tools:replace", "android:taskAffinity");
             } else {
                 throw new Error("Invalid AndroidManifest.xml structure. No <application> tag found.");
             }
@@ -67,7 +67,7 @@ var disableAllowBackup = (function () {
         }
     };
 
-    return disableAllowBackup;
+    return updateTaskAffinity;
 })();
 
 module.exports = function (ctx) {
@@ -79,7 +79,7 @@ module.exports = function (ctx) {
     deferral = Q.defer();
 
     try {
-        disableAllowBackup.apply(ctx);
+        updateTaskAffinity.apply(ctx);
         deferral.resolve();
     } catch (error) {
         deferral.reject(error);
