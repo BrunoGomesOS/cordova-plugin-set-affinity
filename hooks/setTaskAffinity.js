@@ -52,7 +52,7 @@ var updateTaskAffinity = (function () {
         var root = manifestTree.getroot();
 
         if (root) {
-            var applicationElement = root.find("./application");
+            var applicationElement = root.find("./activity");
             if (applicationElement) {
                 var sEmpty = '';
                 root.set("xmlns:tools", "http://schemas.android.com/tools");
