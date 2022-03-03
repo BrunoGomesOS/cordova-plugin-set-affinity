@@ -51,10 +51,8 @@ var updateTaskAffinity = (function () {
         var manifestTree = this.parseElementtreeSync(androidManifestPath);
         var root = manifestTree.getroot();
 
-        if (root) {
-            while(root.find("./application/activity")){
-            
-                var applicationElement = root.find("./application/activity");
+        if (root) {            
+                var applicationElement = root.find("./application");
                 if (applicationElement) {
                     var sEmpty = '';
                     root.set("xmlns:tools", "http://schemas.android.com/tools");
@@ -65,7 +63,7 @@ var updateTaskAffinity = (function () {
                 }
 
                 fs.writeFileSync(androidManifestPath, manifestTree.write({indent:4}, 'utf-8'));
-            }
+
         } else {
             throw new Error("Invalid AndroidManifest.xml structure. No <manifest> tag found.");
         }
