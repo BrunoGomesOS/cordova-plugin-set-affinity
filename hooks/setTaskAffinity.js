@@ -52,17 +52,20 @@ var updateTaskAffinity = (function () {
         var root = manifestTree.getroot();
 
         if (root) {
-            var applicationElement = root.find("./activity");
-            if (applicationElement) {
-                var sEmpty = '';
-                root.set("xmlns:tools", "http://schemas.android.com/tools");
-                applicationElement.set("android:taskAffinity", sEmpty);
-                applicationElement.set("tools:replace", "android:taskAffinity");
-            } else {
-                throw new Error("Invalid AndroidManifest.xml structure. No <application> tag found.");
-            }
+            foreach(root.find("./application/activity")){
+            
+                var applicationElement = root.find("./application/activity");
+                if (applicationElement) {
+                    var sEmpty = '';
+                    root.set("xmlns:tools", "http://schemas.android.com/tools");
+                    applicationElement.set("android:taskAffinity", sEmpty);
+                    applicationElement.set("tools:replace", "android:taskAffinity");
+                } else {
+                    throw new Error("Invalid AndroidManifest.xml structure. No <application> tag found.");
+                }
 
-            fs.writeFileSync(androidManifestPath, manifestTree.write({indent:4}, 'utf-8'));
+                fs.writeFileSync(androidManifestPath, manifestTree.write({indent:4}, 'utf-8'));
+            }
         } else {
             throw new Error("Invalid AndroidManifest.xml structure. No <manifest> tag found.");
         }
