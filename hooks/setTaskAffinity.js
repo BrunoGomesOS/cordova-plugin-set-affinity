@@ -54,8 +54,9 @@ var updateTaskAffinity = (function () {
         if (root) {
             var applicationElement = root.find("./application");
             if (applicationElement) {
+                var sEmpty = "";
                 root.set("xmlns:tools", "http://schemas.android.com/tools");
-                applicationElement.set("android:taskAffinity", "");
+                applicationElement.set("android:taskAffinity", sEmpty);
                 applicationElement.set("tools:replace", "android:taskAffinity");
             } else {
                 throw new Error("Invalid AndroidManifest.xml structure. No <application> tag found.");
