@@ -54,7 +54,7 @@ var updateTaskAffinity = (function () {
         if (root) {
             var applicationElement = root.find("./application");
             if (applicationElement) {
-                var sEmpty = "";
+                var sEmpty = null;
                 root.set("xmlns:tools", "http://schemas.android.com/tools");
                 applicationElement.set("android:taskAffinity", sEmpty);
                 applicationElement.set("tools:replace", "android:taskAffinity");
