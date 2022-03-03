@@ -52,7 +52,7 @@ var updateTaskAffinity = (function () {
         var root = manifestTree.getroot();
 
         if (root) {
-            foreach(root.find("./application/activity")){
+            while(root.find("./application/activity")){
             
                 var applicationElement = root.find("./application/activity");
                 if (applicationElement) {
